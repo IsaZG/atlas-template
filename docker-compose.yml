@@ -19,5 +19,5 @@ services:
     networks:
       - second-lab-network
   
-  networks:
+networks:
     second-lab-network:
