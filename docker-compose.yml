@@ -3,7 +3,6 @@ version: '3'
 services:
   mysql:
     image: mysql/mysql-server:latest
-    container_name: mysql
     ports:
       - 3306:3306
     environment:
@@ -16,7 +15,6 @@ services:
     build: ./image
     ports:
       - 8080:80
-    container_name: atlas-template
     networks:
       - second-lab-network
   
