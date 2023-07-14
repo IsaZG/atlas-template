@@ -3,11 +3,12 @@ version: '3'
 services:
   mysql:
     image: mysql/mysql-server:latest
+    container_name: mysql
     ports:
       - 3306:3306
     environment:
-      - MYSQL_ROOT_PASSWORD=password
-    container_name: mysql
+      - MYSQL_DATABASE: mysql
+      - MYSQL_ROOT_PASSWORD: password
     networks:
       - second-lab-network
   
