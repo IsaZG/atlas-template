@@ -1,0 +1,21 @@
+services:
+  mysql:
+    image: mysql/mysql-server:latest
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+    container_name: mysql
+    networks:
+      - second-lab-network
+  
+  atlas-template:
+    build: ./image
+    ports:
+      - 8080:80
+    container_name: atlas-template
+    networks:
+      - second-lab-network
+  
+  networks:
+    second-lab-network:
